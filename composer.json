@@ -6,6 +6,7 @@
   "require": {
     "sonata-project/admin-bundle": "^3.9",
     "symfony/framework-bundle": "^4.0",
-    "symfony/security-bundle": "^4.0"
+    "symfony/security-bundle": "^4.0",
+    "symfony/doctrine-bridge": "^4.0"
   }
 }
