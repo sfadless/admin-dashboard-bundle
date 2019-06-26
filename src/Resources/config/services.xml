@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="sfadless_cmf.user_provider" class="SfadlessCMF\AdminDashboardBundle\Security\UserProvider">
+            <argument key="$entityManager" type="service" id="doctrine.orm.entity_manager"/>
+        </service>
+        <service id="SfadlessCMF\AdminDashboardBundle\Security\UserProvider" alias="sfadless_cmf.user_provider"/>
+
+        <service id="sfadless_cmf.login_form" class="SfadlessCMF\AdminDashboardBundle\Form\AdminLoginForm"/>
+        <service id="SfadlessCMF\AdminDashboardBundle\Form\AdminLoginForm" alias="sfadless_cmf.login_form"/>
+
+        <service id="sfadless_cmf.admin_login_authenticator" class="SfadlessCMF\AdminDashboardBundle\Security\AdminLoginAuthenticator">
+            <argument key="$formFactory" type="service" id="form.factory"/>
+            <argument key="$router" type="service" id="router.default"/>
+            <argument key="$passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+        </service>
+
+        <service id="SfadlessCMF\AdminDashboardBundle\Security\AdminLoginAuthenticator" alias="sfadless_cmf.admin_login_authenticator"/>
+
+        <service id="sfadless_cmf.admin_login_controller" class="SfadlessCMF\AdminDashboardBundle\Controller\AdminLoginController" public="true">
+            <argument key="$authenticationUtils" type="service" id="security.authentication_utils"/>
+            <tag name="controller.service_arguments"/>
+        </service>
+
+        <service id="SfadlessCMF\AdminDashboardBundle\Controller\AdminLoginController" alias="sfadless_cmf.admin_login_controller" public="true"/>
+    </services>
+</container>

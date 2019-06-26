@@ -1,0 +1,11 @@
+{
+  "name" : "sfadless-cmf/admin-dashboard-bundle",
+  "type" : "symfony-bundle",
+  "description": "",
+  "license": "proprietary",
+  "require": {
+    "sonata-project/admin-bundle": "^3.9",
+    "symfony/framework-bundle": "^4.0",
+    "symfony/security-bundle": "^4.0"
+  }
+}
