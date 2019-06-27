@@ -1,7 +1,0 @@
-sfadless_cmf.admin_dashboard.login:
-    path: /admin/login
-    controller: SfadlessCMF\AdminDashboardBundle\Controller\AdminLoginController::loginAction
-
-sfadless_cmf.admin_dashboard.logout:
-    path: /admin/logout
-    controller: SfadlessCMF\AdminDashboardBundle\Controller\AdminLoginController::logoutAction
