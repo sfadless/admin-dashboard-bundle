@@ -41,7 +41,7 @@ class User implements UserInterface
     /**
      * @var array
      *
-     * @ORM\Column(type="json_array", name="roles")
+     * @ORM\Column(type="array", name="roles")
      */
     private $roles;
 
